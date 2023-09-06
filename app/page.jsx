@@ -1,3 +1,4 @@
+// import Button from "./Button";
 import Movie from "./Movie";
 import styles from "./page.module.css";
 
@@ -21,6 +22,8 @@ export default async function Home() {
             release_date={movie.release_date}
           />
         ))}
+        {/* just like this we can create small components and call in everywhere when needed for consistansy */}
+        {/* <Button>Click</Button> */}
       </div>
     </main>
   );
