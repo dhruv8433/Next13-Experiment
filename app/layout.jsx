@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       {/* like that we can import it into class  */}
       {/* <body className={inter.className}> */}
-      <body className={`${montserrat.className} mx-16 my-12`}>
+      <body className={`${montserrat.className} mx-8 my-12`}>
         {/* <nav>
           <h1>logo</h1> */}
         {/* from tailwind css we got it  */}
