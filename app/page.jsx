@@ -5,12 +5,20 @@ import styles from "./page.module.css";
 export default async function Home() {
   let response = [];
 
-  const data = await fetch(
-    `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`
-  );
+  try {
+    const data = await fetch(
+      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`
+    );
 
-  const res = await data.json();
-  response = res.results;
+    if (!data.ok) {
+      throw new Error("API request failed");
+    }
+
+    const res = await data.json();
+    response = res.results;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
 
   return (
     <main className={styles.main}>
@@ -30,5 +38,9 @@ export default async function Home() {
   );
 }
 
-{/* just like this we can create small components and call in everywhere when needed for consistansy */}
-{/* <Button>Click</Button> */}
+{
+  /* just like this we can create small components and call in everywhere when needed for consistansy */
+}
+{
+  /* <Button>Click</Button> */
+}
