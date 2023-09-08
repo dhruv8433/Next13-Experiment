@@ -19,6 +19,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  
   return (
     <html lang="en">
       {/* like that we can import it into class  */}

@@ -1,6 +1,6 @@
-import React from 'react';
-import Movie from './Movie';
-import styles from './page.module.css';
+// import Button from "./Button";
+import Movie from "./Movie";
+import styles from "./page.module.css";
 
 export default async function Home() {
   const data = await fetch(
@@ -8,20 +8,13 @@ export default async function Home() {
   );
 
   const res = await data.json();
-
-  // Check if res.results exists and is an array before mapping over it
-  if (!res.results || !Array.isArray(res.results)) {
-    return (
-      <main className={styles.main}>
-        <p>No movie data available.</p>
-      </main>
-    );
-  }
+  const response = res.results
 
   return (
     <main className={styles.main}>
+      {/* <h1>Hello Next </h1> */}
       <div className="grid gap-16 grid-cols-fluid">
-        {res.results.map((movie) => (
+        {response.map((movie) => (
           <Movie
             key={movie.id}
             id={movie.id}
@@ -30,6 +23,8 @@ export default async function Home() {
             release_date={movie.release_date}
           />
         ))}
+        {/* just like this we can create small components and call in everywhere when needed for consistansy */}
+        {/* <Button>Click</Button> */}
       </div>
     </main>
   );
