@@ -3,12 +3,14 @@ import Movie from "./Movie";
 import styles from "./page.module.css";
 
 export default async function Home() {
+  let response = [];
+
   const data = await fetch(
     `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`
   );
 
   const res = await data.json();
-  const response = res.results
+  response = res.results;
 
   return (
     <main className={styles.main}>
