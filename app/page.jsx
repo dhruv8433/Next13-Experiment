@@ -25,9 +25,10 @@ export default async function Home() {
             release_date={movie.release_date}
           />
         ))}
-        {/* just like this we can create small components and call in everywhere when needed for consistansy */}
-        {/* <Button>Click</Button> */}
       </div>
     </main>
   );
 }
+
+{/* just like this we can create small components and call in everywhere when needed for consistansy */}
+{/* <Button>Click</Button> */}
