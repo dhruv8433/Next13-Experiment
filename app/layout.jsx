@@ -19,16 +19,15 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  
   return (
     <html lang="en">
       {/* like that we can import it into class  */}
       {/* <body className={inter.className}> */}
-      <body className={`${montserrat.className} mx-32 my-12`}>
+      <body className={`${montserrat.className} mx-16 my-12`}>
         {/* <nav>
           <h1>logo</h1> */}
-          {/* from tailwind css we got it  */}
-          {/* <ul className="font-montserrat">
+        {/* from tailwind css we got it  */}
+        {/* <ul className="font-montserrat">
             <li>
               <a href="#">About</a>
             </li>
